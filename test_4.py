@@ -1,7 +1,11 @@
 
 def appearance(intervals):
-    A = { b for i in range(1,len(intervals['pupil']),2) for b in range(intervals['pupil'][i-1],intervals['pupil'][i]) if b>= intervals['lesson'][0] and b < intervals['lesson'][1]}
-    B = { b for i in range(1,len(intervals['tutor']),2) for b in range(intervals['tutor'][i-1],intervals['tutor'][i]) if b>= intervals['lesson'][0] and b < intervals['lesson'][1]}
+    A = { b for i in range(1,len(intervals['pupil']),2) 
+         for b in range(intervals['pupil'][i-1],intervals['pupil'][i]) 
+         if b>= intervals['lesson'][0] and b < intervals['lesson'][1]}
+    B = { b for i in range(1,len(intervals['tutor']),2) 
+         for b in range(intervals['tutor'][i-1],intervals['tutor'][i]) 
+         if b>= intervals['lesson'][0] and b < intervals['lesson'][1]}
     return len(A.intersection(B))
 
 tests = [
